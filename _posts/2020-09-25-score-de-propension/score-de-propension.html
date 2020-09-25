@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+  <title>score de propension</title>
+  
+  <meta property="description" itemprop="description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
+  
+  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2020-09-25"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-09-25"/>
+  <meta name="article:author" content="Bachirou Taddé"/>
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="score de propension"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
+  <meta property="og:locale" content="en_US"/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="score de propension"/>
+  <meta property="twitter:description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
+  
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["score de propension"]},{"type":"character","attributes":{},"value":["Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Bachirou Taddé"]},{"type":"character","attributes":{},"value":["https://bachirtadde.github.io"]}]}]},{"type":"character","attributes":{},"value":["09-25-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["score-de-propension_files/bowser-1.9.3/bowser.min.js","score-de-propension_files/distill-2.2.21/template.v2.js","score-de-propension_files/figures/covariables.png","score-de-propension_files/jquery-1.11.3/jquery.min.js","score-de-propension_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for table of contents */
+  
+  .d-toc {
+    color: rgba(0,0,0,0.8);
+    font-size: 0.8em;
+    line-height: 1em;
+  }
+  
+  .d-toc-header {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1.3em;
+  }
+  
+  .d-toc a {
+    border-bottom: none;
+  }
+  
+  .d-toc ul {
+    padding-left: 0;
+  }
+  
+  .d-toc li>ul {
+    padding-top: 0.8em;
+    padding-left: 16px;
+    margin-bottom: 0.6em;
+  }
+  
+  .d-toc ul,
+  .d-toc li {
+    list-style-type: none;
+  }
+  
+  .d-toc li {
+    margin-bottom: 0.9em;
+  }
+  
+  .d-toc-separator {
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+  
+  .d-article-with-toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  
+  
+  /* Tweak code blocks (note that this CSS is repeated above in an injection
+     into the d-code shadow dom) */
+  
+  d-code {
+    overflow-x: auto !important;
+  }
+  
+  pre.d-code code.d-code {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  pre.text-output {
+  
+    font-size: 12px;
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-code {
+    overflow-x: visible !important;
+  }
+  
+  pre.d-code code.d-code  {
+      padding-left: 18px;
+      font-size: 14px;
+  }
+  pre.text-output {
+    font-size: 14px;
+  }
+  }
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // create d-bibliography
+    var bibliography = $('<d-bibliography></d-bibliography>');
+    $('#distill-bibliography').wrap(bibliography);
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace citations with <d-cite>
+    $('.citation').each(function(i, val) {
+      appendix = true;
+      var cites = $(this).attr('data-cites').split(" ");
+      var dt_cite = $('<d-cite></d-cite>');
+      dt_cite.attr('key', cites.join());
+      $(this).replaceWith(dt_cite);
+    });
+    // remove refs
+    $('#refs').remove();
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-toc a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // replace code blocks with d-code
+    $('pre>code').each(function(i, val) {
+      var code = $(this);
+      var pre = code.parent();
+      var clz = "";
+      var language = pre.attr('class');
+      if (language) {
+        // map unknown languages to "clike" (without this they just dissapear)
+        if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                                 "javascript", "js", "julia", "lua", "markdown",
+                                 "markup", "mathml", "python", "svg", "xml"]) == -1)
+          language = "clike";
+        language = ' language="' + language + '"';
+        var dt_code = $('<d-code block' + language + clz + '></d-code>');
+        dt_code.text(code.text());
+        pre.replaceWith(dt_code);
+      } else {
+        code.addClass('text-output').unwrap().changeElementType('pre');
+      }
+    });
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('d-code, pre.text-output, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // table of contents
+      if (have_authors) // adjust border if we are in authors
+        $('.d-toc').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+      $('d-code').each(function(i, val) {
+        var style = document.createElement('style');
+        style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                          '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+        if (this.shadowRoot)
+          this.shadowRoot.appendChild(style);
+      });
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-toc-header').remove();
+    $('.d-toc').remove();
+    $('.d-toc-separator').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="score-de-propension_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="score-de-propension_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="score-de-propension_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="score-de-propension_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"score de propension","description":"Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).","authors":[{"author":"Bachirou Taddé","authorURL":"https://bachirtadde.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-09-25T00:00:00.000+02:00","citationText":"Taddé, 2020"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>score de propension</h1>
+<p><p>Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales. Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension. Enfin je présente aussi les forces et faiblesses de la méthode du score de propension. Cet article est inspiré de l’article de Moulis et al. (2018).</p></p>
+</div>
+
+<div class="d-byline">
+  Bachirou Taddé <a href="https://bachirtadde.github.io" class="uri">https://bachirtadde.github.io</a> 
+  
+<br/>09-25-2020
+</div>
+
+<div class="d-article">
+<h1 id="introduction">Introduction</h1>
+<p>Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales. Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques techniques de contrôle de biais résiduels inhérent au score de propension. Enfin je présente aussi les forces et faiblesses de la méthode du score de propension. Cet article est inspiré de l’article de Moulis et al. (2018).</p>
+<h1 id="les-differents-types-de-covariables">Les différents types de covariables</h1>
+<p>Une étude statistique peut être vue comme une collection de variables et de méthodes d’analyse de ces variables conformément à l’objectif de l’étude. Le plus souvent il s’agira d’explorer ou de comprendre le lien entre deux variables spécifiques tout en tenant compte de la présence d’autres variables qui peuvent s’influencer mutuellement : il s’agit là de covariables.  Les covariables d’une étude statistique peuvent être réparties en 6 catégories comme indiqué dans la figure 1.</p>
+<ul>
+<li><p><strong>Variable dépendante (évènement)</strong> : variable d’intérêt dans une étude (exemple saignement grave).</p></li>
+<li><p><strong>Variable indépendante (exposition)</strong> : variable dont on veut comprendre l’influence sur la variable d’étude (exemple anticoagulant).</p></li>
+<li><p><strong>Variable médiatrice (intermédiaire)</strong> : variable se situant sur le chemin causal allant de la variable indépendante à la variable dépendante, exemple INR.</p></li>
+<li><p><strong>Facteur de confusion</strong> : Variable liée à la fois à la variable indépendante et à la variable dépendante. Variable qui est source de variabilité à la fois de la variable dépendante et de la variable indépendante. Exemple l’âge, sexe, insuffisance rénale.</p></li>
+<li><p><strong>Variable instrumentale</strong> : variable qui influence uniquement la variable indépendante.</p></li>
+<li><p><strong>Variable liée uniquement à l’événement</strong>, exemple chute.</p></li>
+</ul>
+<p><img src="score-de-propension_files/figures/covariables.png" alt="align = center, width=" /><br />
+<em>Figure 1. Les différents types de variables dans une étude statistique (Moulis et al. 2018).</em></p>
+<h1 id="les-differents-biais">Les différents biais</h1>
+<p>Le but d’une étude statistique est d’obtenu une représentation exacte de la réalité à partir de l’analyse de données collectées. Pour des raisons de ressources limitées, les données de l’analyse sont incomplètes. Souvent un échantillon de la population est utilisé et les conclusions d’analyse sur l’échantillon sont extrapolées à l’échelle de la population ; ce qui principalement peut induire des erreurs d’appréciation dites bais. Un biais est une <strong>erreur de raisonnement</strong> ou de <strong>procédure</strong> qui amène à une représentation fausse de la réalité. Les biais courant en statistique sont :</p>
+<ul>
+<li><p><strong>Biais de sélection</strong> (erreur de procédure) : une erreur systématique faite lors de la sélection des sujets à étudier. Elle traduit un échantillon non représentatif de la population étudiée.</p></li>
+<li><p><strong>Biais d’information</strong> (ou biais de mesure, erreur de procédure) : une erreur systématique due à une mauvaise mesure d’une ou plusieurs variables de l’étude (exposition, évènement, médiatrice, etc.).</p></li>
+<li><p><strong>Biais d’indication</strong> (ou biais d’évaluation, erreur de raisonnement): une erreur systématique due au fait que la mesure du critère de jugement (de survenu de l’évènement) n’est pas réalisée de la même manière dans les groupes comparés. Il s’agit d’un raisonnement inconscient ou d’une croyance selon laquelle les patients les plus exposés sont aussi ceux les plus à risque de développer l’événement, conduisant à une tendance à relâcher le critère de jugement de survenu de l’événement chez la population la plus exposé. Elle entraine souvent une surestimation de l’effet de l’exposition.</p></li>
+<li><p><strong>Biais d’interprétation</strong> : une erreur systématique d’interprétation des résultats d’analyse entrainant une fausse représentation de la réalité.</p></li>
+</ul>
+<p><strong>NB</strong> : Il est donc important tout au long d’une étude statistique d’éviter ou de contrôler l’ensemble des biais potentiels.</p>
+<h1 id="les-differentes-types-detude">Les différentes types d’étude</h1>
+<p>Nous pouvons identifier deux types d’études statistiques :</p>
+<ul>
+<li>Etude expérimentale (essai randomisée)</li>
+<li>Etude observationnelle (étude vie réelle)</li>
+</ul>
+<h2 id="etude-experimentale">Etude expérimentale</h2>
+<p>Une étude expérimentale est une étude contrôlée qui permet de répondre à la question : « est-ce que l’exposition a un effet sur la survenue de l’événement en conditions expérimentales ?». Elle présente les avantages suivantes:</p>
+<ul>
+<li>(+) elle est la méthodologie de référence la moins biaisée pour faire de l’inférence causale.</li>
+<li>(+) elle tient compte des variables observables et non-observables.</li>
+</ul>
+<p>Ses faiblesses sont :</p>
+<ul>
+<li>(-) lune étude expériementale est réalisée dans des conditions expérimentales loin de la vie réelle.</li>
+<li>(-) Il est impossible à mettre en ouvre dans certaines situations (churigie ou maladie rare, etc.).</li>
+</ul>
+<h2 id="etude-observationnelle">Etude observationnelle</h2>
+<p>Les études observationnelles permettent de répondre à la question : « quel est l’effet de l’exposition sur la survenue de l’événement en conditions réelles ? » Elle présente l’avantage de faire :</p>
+<ul>
+<li>(+) une inférence causale dans des conditions complexes de vie réelle.</li>
+</ul>
+<p>Leurs faiblesses sont :</p>
+<ul>
+<li>(-) la présence potentielle de plusieurs sources de biais.</li>
+<li>(-) l’allocation du traitement non aléatoire peut entrainer un biais d’indication.</li>
+<li>(-) nécessite une méthode supplémentaire de contrôle de biais.</li>
+<li>(-) les facteurs de confusion non-observable ne sont pas pris en compte;</li>
+<li>(-) la non-prise en compte des facteurs de confusion non observables peut entrainer des biais résiduels.</li>
+</ul>
+<h1 id="methode-de-controle-de-biais-dans-une-etude-observationnelle">Méthode de contrôle de biais dans une étude observationnelle</h1>
+<p>On peut identifier deux approches pour contrôler les biais dans une étude observationnelle :</p>
+<ul>
+<li><p><strong>Modèle d’analyse multivarié</strong> dont les forces et faiblesses sont :</p>
+<ul>
+<li>(+) Approche classique et facile à mettre en ouvre</li>
+<li>(-) Requiert des hypothèses spécifiques difficiles à vérifier (hypothèses de modélisation)</li>
+<li>(-) Requiert des règles strictes pour une interprétation causale (Pearl, 2000)</li>
+<li>(-) Limitation du nombre de covariables sinon problème de sur-ajustement</li>
+</ul></li>
+<li><p><strong>Méthode du score de propension (Rosenbaum &amp; Rubin, 1983)</strong> dont les forces et faiblesses sont :</p>
+<ul>
+<li>(+) maitriser par une seule covariable (le score de propension) le biais de confusion</li>
+<li>(-) exclus les variables non-observables (ou non-observée)</li>
+<li>(-) Possible biais résiduel du fait de variables non-observables</li>
+</ul></li>
+</ul>
+<h1 id="methode-du-score-de-propension-rosenbaum-rubin-1983">Méthode du Score de propension (Rosenbaum &amp; Rubin, 1983)</h1>
+<p>Dans la méthode du score de propension, un score de propension est calculé pour chaque individu. Le score de propension de chaque individu est la probabilité d’être exposé conditionnellement à des covariables de l’étude.</p>
+<p>Soit :</p>
+<ul>
+<li><span class="math inline">\(Y\)</span> : la variable « Evènement », la variable d’intérêt ou variable dépendante.</li>
+<li><span class="math inline">\(X\)</span> : la variable « Exposition », variable binaire 1 = exposé, 0 = non-exposé</li>
+<li><span class="math inline">\(C\)</span> : l’ensemble des autres covariables de l’étude</li>
+<li><span class="math inline">\(S\)</span> : un sous ensemble de covariables : <span class="math inline">\(S \subset C\)</span></li>
+<li><span class="math inline">\(sp\)</span> : le score de propension</li>
+</ul>
+<p><span class="math display">\[\begin{equation}\label{eq1}
+sp = P(X=1\rvert S =s) 
+\end{equation}\]</span></p>
+<p>Ainsi, le jeu de données est complété par les scores de propension des individus calculés à partir de la formule . La formule  étant une formule probabiliste, elle requiert une estimation. Je détaillerai dans un prochain article les méthodes d’estimation du score de propension. Toutefois le principe est de faire une régression pour estimer le score de propension de chaque individu.</p>
+<h2 id="methode-de-creation-du-score-de-propension">Méthode de création du score de propension</h2>
+<ul>
+<li>Régression logistique</li>
+<li>Autre méthode de scoring normalisée (LDA, QDA, etc.)???</li>
+</ul>
+<h2 id="choix-des-variables-a-inclure-dans-la-creation-du-score">Choix des variables à inclure dans la création du score</h2>
+<p>Il est important de définir un vrai porcessus de choix des variables devant servir à la création du score. J’ai pu identifier dans la litérature deux approches que sont:</p>
+<ul>
+<li><strong>Méthode inclusive</strong> : inclure toutes les covariables observables disponibles
+<ul>
+<li>(-) problème de sur-ajustement</li>
+</ul></li>
+<li><strong>Méthode exclusive</strong> : lister les covariables à inclure sur la base de la littérature
+<ul>
+<li>Prioriser les covariables de type facteur de confusion</li>
+<li>Risque d’omission de variable importante</li>
+</ul></li>
+</ul>
+<h2 id="validation-du-score-de-propension">Validation du score de propension</h2>
+<p>L’objectif du score de propension est de restaurer une équiprobabilité entre les groupes d’exposition afin de contrôler d potentiels biais (surtout le biais de sélection). Il est donc important de vérifier que le SP restaure l’équiprobabilité d’exposition entre groupe exposé et groupe non exposé. Le score de propension est une variable dérivée de l’étude. Et en tant que telle, on peut vérifier que les groupes d’exposition sont comparables au regard de cette variable, tout comme on faire un test de comparaison de moyenne d’une variable pour comparer des groupes de sujets. On peut donc:</p>
+<ul>
+<li>Vérifier que le score de propension restaure l’équiprobabilité d’exposition entre groupe exposé et groupe non exposé ; utiliser des mesures statistiques ou/et des représentations graphiques (distribution des scores dans chaque groupe, par exemple) à cet effet.</li>
+<li>Vérifier que les caractéristiques des [deux populations] sont les mêmes pour toutes les covariables ; utiliser des tests statistiques à cet effet.</li>
+</ul>
+<h2 id="utilisation-du-score-de-propension">Utilisation du score de propension</h2>
+<p>Le plus important c’est l’utilisation que nous faisons des outils à disposition. À ce titre, il est important de connaitre les méthodes et recommandations d’utilisation du score de propension.<br />
+Le score de propension peut être utilisé comme suit :</p>
+<ul>
+<li>Par stratification</li>
+<li>Par appariement</li>
+<li>Par pondération (IPTW)</li>
+<li>Par Ajustement dans un modèle de régression</li>
+</ul>
+<p>De toutes ces méthodes, quelle est la meilleure?</p>
+<h2 id="controle-du-biais-residuel-du-fait-de-variables-non-observables-dans-la-methode-du-score-de-propension">Contrôle du biais résiduel du fait de variables non-observables dans la méthode du score de propension</h2>
+<ul>
+<li>Utilisation du la propensity score calibration (PSC)</li>
+<li>Utilisation de témoins négatifs</li>
+</ul>
+<h1 id="conclusion">Conclusion</h1>
+<p>Le score de propension est donc une technique utile pour qu’une étude observationnelle se rapproche des conditions « expérimentales » de comparabilité d’une étude randomisée. Cependant, il n’est pas dénué de limites et ne permet pas de remplacer une étude randomisée.</p>
+<h1 id="references">Références</h1>
+<p>Rosenbaum, Paul R., and Donald B. Rubin. “Reducing bias in observational studies using subclassification on the propensity score.” Journal of the American statistical Association 79.387 (1984): 516-524. </p>
+<p>Pearl, Judea. “Models, reasoning and inference.” Cambridge, UK: CambridgeUniversityPress (2000). </p>
+<p>Moulis, G., and M. Lapeyre-Mestre. “Score de propension: intérêts, utilisation et limites. Un guide pratique pour le clinicien.” La Revue de Médecine Interne 39.10 (2018): 805-812.</p>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
