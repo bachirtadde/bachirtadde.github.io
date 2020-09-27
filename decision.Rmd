@@ -1,0 +1,9 @@
+---
+title: "Decision making based on information"
+description:
+  This section is about Desion making based on information gain from statistical analysis.
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```

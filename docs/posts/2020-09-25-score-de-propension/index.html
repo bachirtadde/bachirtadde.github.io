@@ -23,6 +23,7 @@
 
 <meta property="description" itemprop="description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
 
+<link rel="canonical" href="https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2020-09-25"/>
@@ -33,19 +34,33 @@
 <meta property="og:title" content="D-SID: score de propension"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
+<meta property="og:url" content="https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/"/>
+<meta property="og:image" content="https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/score-de-propension_files/figures/covariables.png"/>
+<meta property="og:image:width" content="753"/>
+<meta property="og:image:height" content="330"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="D-SID"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary"/>
+<meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="D-SID: score de propension"/>
 <meta property="twitter:description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
+<meta property="twitter:url" content="https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/"/>
+<meta property="twitter:image" content="https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/score-de-propension_files/figures/covariables.png"/>
+<meta property="twitter:image:width" content="753"/>
+<meta property="twitter:image:height" content="330"/>
 
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="D-SID: score de propension"/>
+<meta name="citation_fulltext_html_url" content="https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/"/>
+<meta name="citation_online_date" content="2020/09/25"/>
+<meta name="citation_publication_date" content="2020/09/25"/>
+<meta name="citation_author" content="Bachirou Taddé"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["score de propension"]},{"type":"character","attributes":{},"value":["Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Bachirou Taddé"]},{"type":"character","attributes":{},"value":["https://bachirtadde.github.io"]}]}]},{"type":"character","attributes":{},"value":["09-25-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","collections","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["score de propension"]},{"type":"character","attributes":{},"value":["Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Bachirou Taddé"]},{"type":"character","attributes":{},"value":["https://bachirtadde.github.io"]}]}]},{"type":"character","attributes":{},"value":["09-25-2020"]},{"type":"character","attributes":{},"value":["bias control"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["disqus","share"]}},"value":[{"type":"character","attributes":{},"value":["bias control"]},{"type":"character","attributes":{},"value":["twitter","linkedin"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/"]},{"type":"character","attributes":{},"value":["https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1303,6 +1318,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="nav-right">
 <a href="../../index.html">Home</a>
 <a href="../../about.html">About</a>
+<a href="../../data.html">Data</a>
+<a href="../../statistics.html">Statistics</a>
+<a href="../../information.html">Information</a>
+<a href="../../decision.html">Decision</a>
+<a>
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -1323,8 +1345,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
-<h1 id="introduction">Introduction</h1>
-<p>Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales. Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques techniques de contrôle de biais résiduels inhérent au score de propension. Enfin je présente aussi les forces et faiblesses de la méthode du score de propension. Cet article est inspiré de l’article de Moulis et al. (2018).</p>
+<!-- # Introduction -->
+<!-- Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques techniques de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018). -->
 <h1 id="les-differents-types-de-covariables">Les différents types de covariables</h1>
 <p>Une étude statistique peut être vue comme une collection de variables et de méthodes d’analyse de ces variables conformément à l’objectif de l’étude. Le plus souvent il s’agira d’explorer ou de comprendre le lien entre deux variables spécifiques tout en tenant compte de la présence d’autres variables qui peuvent s’influencer mutuellement : il s’agit là de covariables.  Les covariables d’une étude statistique peuvent être réparties en 6 catégories comme indiqué dans la figure 1.</p>
 <ul>
@@ -1453,6 +1475,51 @@ Le score de propension peut être utilisé comme suit :</p>
 <p>Pearl, Judea. “Models, reasoning and inference.” Cambridge, UK: CambridgeUniversityPress (2000). </p>
 <p>Moulis, G., and M. Lapeyre-Mestre. “Score de propension: intérêts, utilisation et limites. Un guide pratique pour le clinicien.” La Revue de Médecine Interne 39.10 (2018): 805-812.</p>
 <!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="disqus-comments">
+      <i class="fas fa-comments"></i>
+      &nbsp;
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2020-09-25-score-de-propension/">Comment on this article</span>
+    </span>
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=score%20de%20propension&amp;url=https%3A%2F%2Fbachirtadde.github.io%2Fposts%2F2020-09-25-score-de-propension%2F">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fbachirtadde.github.io%2Fposts%2F2020-09-25-score-de-propension%2F&amp;title=score%20de%20propension">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fbachirtadde.github.io%2Fposts%2F2020-09-25-score-de-propension%2F">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </span>
+  </p>
+  <script id="dsq-count-scr" src="https://reproducible-finance-with-r.disqus.com/count.js" async></script>
+  <div id="disqus_thread" class="hidden"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/';
+  this.page.identifier = 'posts/2020-09-25-score-de-propension/';
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://reproducible-finance-with-r.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+  <p>
+    <div class="subscribe"><form method='post' action='https://blogtrottr.com'>
+  <p>Enjoy this blog? Get notified of new posts via email:</p>
+  <input type='text' name='btr_email' />
+  <input type='hidden' name='btr_url'
+         value='https://beta.rstudioconnect.com/content/11424/index.xml'/>
+  <input type='hidden' name='schedule_type' value='0' />
+  <input type='submit' value='Subscribe' />
+</form></div>
+  </p>
+</div>
 <!--/radix_placeholder_article_footer-->
 </div>
 
@@ -1472,7 +1539,18 @@ Le score de propension peut être utilisé comme suit :</p>
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Taddé (2020, Sept. 25). D-SID: score de propension. Retrieved from https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{taddé2020score,
+  author = {Taddé, Bachirou},
+  title = {D-SID: score de propension},
+  url = {https://bachirtadde.github.io/posts/2020-09-25-score-de-propension/},
+  year = {2020}
+}</pre>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

@@ -10,10 +10,14 @@
       }
     ],
     "date": "2020-09-25",
-    "categories": [],
+    "categories": [
+      "bias control"
+    ],
     "preview": "posts/2020-09-25-score-de-propension/score-de-propension_files/figures/covariables.png",
-    "last_modified": "2020-09-25T15:24:45+02:00",
-    "input_file": {}
+    "last_modified": "2020-09-25T19:43:01+02:00",
+    "input_file": {},
+    "preview_width": 753,
+    "preview_height": 330
   },
   {
     "path": "posts/welcome/",

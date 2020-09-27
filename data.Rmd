@@ -1,9 +1,9 @@
 ---
-title: "About this blog"
+title: "Data"
 description:
-  Some additional details about the blog
+  This section is for data.
 ---
-
+  
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```

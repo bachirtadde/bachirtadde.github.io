@@ -7,6 +7,11 @@ author:
   - name: Bachirou Taddé
     url: https://bachirtadde.github.io
 date: 09-25-2020
+categories: bias control
+collections:
+  posts:
+    disqus: bias control
+    share: [twitter, linkedin, facebook]
 output:
   distill::distill_article:
     self_contained: false
@@ -16,10 +21,9 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Introduction
+<!-- # Introduction -->
 
-Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques techniques de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).
-
+<!-- Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques techniques de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018). -->
 
 # Les différents types de covariables
 

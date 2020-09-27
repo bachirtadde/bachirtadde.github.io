@@ -1,5 +1,9 @@
 ---
-title: "Gallery of featured posts"
+title: "Welcome"
+description:
+  Data, Statistics, Information and Decision making.
 site: distill::distill_website
-listing: posts
+listing: 
+  posts:
+    - welcome
 ---

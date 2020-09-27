@@ -1,0 +1,9 @@
+---
+title: "Information construction from statistical analysis"
+description:
+  This section is about information obtained from statistical analysis and needed for decision making.
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```

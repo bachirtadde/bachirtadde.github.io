@@ -19,39 +19,369 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>score de propension</title>
+  <title>D-SID: Statistics and programming</title>
   
-  <meta property="description" itemprop="description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
+  <meta property="description" itemprop="description" content="This section concern statistics and programming methods and technics useful for data analysis."/>
   
   
-  <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2020-09-25"/>
-  <meta property="article:created" itemprop="dateCreated" content="2020-09-25"/>
-  <meta name="article:author" content="Bachirou Taddé"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="score de propension"/>
+  <meta property="og:title" content="D-SID: Statistics and programming"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
+  <meta property="og:description" content="This section concern statistics and programming methods and technics useful for data analysis."/>
   <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="D-SID"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="score de propension"/>
-  <meta property="twitter:description" content="Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018)."/>
+  <meta property="twitter:title" content="D-SID: Statistics and programming"/>
+  <meta property="twitter:description" content="This section concern statistics and programming methods and technics useful for data analysis."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","collections","output"]}},"value":[{"type":"character","attributes":{},"value":["score de propension"]},{"type":"character","attributes":{},"value":["Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Bachirou Taddé"]},{"type":"character","attributes":{},"value":["https://bachirtadde.github.io"]}]}]},{"type":"character","attributes":{},"value":["09-25-2020"]},{"type":"character","attributes":{},"value":["bias control"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["disqus","share"]}},"value":[{"type":"character","attributes":{},"value":["bias control"]},{"type":"character","attributes":{},"value":["twitter","linkedin"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Statistics and programming"]},{"type":"character","attributes":{},"value":["This section concern statistics and programming methods and technics useful for data analysis."]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"character","attributes":{},"value":["2020-09-25-score-de-propension"]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  
-  <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["score-de-propension_files/bowser-1.9.3/bowser.min.js","score-de-propension_files/distill-2.2.21/template.v2.js","score-de-propension_files/figures/covariables.png","score-de-propension_files/jquery-1.11.3/jquery.min.js","score-de-propension_files/webcomponents-2.0.0/webcomponents.js"]}
-  </script>
   <!--radix_placeholder_navigation_in_header-->
+  
+  <script type="application/javascript">
+  
+    window.headroom_prevent_pin = false;
+  
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+  
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+  
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+  
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+  
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+  
+  <style type="text/css">
+  
+  /* Theme (user-documented overrideables for nav appearance) */
+  
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #455a64;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .distill-site-nav a:hover {
+    color: white;
+  }
+  
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+  
+  .distill-site-header {
+  
+  }
+  
+  .distill-site-footer {
+  
+  }
+  
+  
+  /* Site Header */
+  
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+  
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+  
+  
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+  
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+  
+  .distill-site-header .title {
+    font-size: 18px;
+  }
+  
+  .distill-site-header .logo {
+    padding: 0;
+  }
+  
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+  
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+  
+  
+  
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+  
+  
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+  
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+  
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-dropdown-active {
+    display: block;
+  }
+  
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+  
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+  
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative;}
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
+  /* Site Footer */
+  
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Headroom */
+  
+  d-title {
+    padding-top: 6rem;
+  }
+  
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+  
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+  
+  .headroom--unpinned {
+    top: -100px;
+  }
+  
+  .headroom--pinned {
+    top: 0;
+  }
+  
+  </style>
+  
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -937,171 +1267,407 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="score-de-propension_files/jquery-1.11.3/jquery.min.js"></script>
-  <script src="score-de-propension_files/bowser-1.9.3/bowser.min.js"></script>
-  <script src="score-de-propension_files/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="score-de-propension_files/distill-2.2.21/template.v2.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body>
+<body class="layout-listing">
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"score de propension","description":"Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).","authors":[{"author":"Bachirou Taddé","authorURL":"https://bachirtadde.github.io","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2020-09-25T00:00:00.000+02:00","citationText":"Taddé, 2020"}
+{"title":"Statistics and programming","description":"This section concern statistics and programming methods and technics useful for data analysis.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="index.html" class="title">D-SID</a>
+</div>
+<div class="nav-right">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="data.html">Data</a>
+<a href="statistics.html">Statistics</a>
+<a href="information.html">Information</a>
+<a href="decision.html">Decision</a>
+<a>
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
+<!--radix_placeholder_article_listing-->
+
+<style type="text/css">
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 1em;
+}
+
+.posts-list .metadata .tags {
+  margin-top: 1em;
+}
+
+.posts-list .tags .tag {
+  color: rgba(0,0,0,0.67);
+  padding: 0.3em 0.5em;
+  margin: 0;
+  font-size: 80%;
+  border: 1px solid rgba(0,0,0,0.4);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 35%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 15%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 72%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+</style>
+
+<script type="application/javascript">
+
+function init_posts_list() {
+
+  function load_image(img) {
+    var src = $(img).attr('data-src');
+    if (src) {
+      $(img).attr('src', src);
+      $(img).load(function() {
+        img.removeAttribute('data-src');
+      });
+    }
+  }
+
+  function set_posts_visible(posts, visible) {
+    if (visible) {
+
+      // show bottom border by default
+      $(posts).removeClass('post-preview-last');
+
+      // apply limits if need be
+      var max_posts = 25;
+      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
+      if (apply_limits && posts.length > max_posts) {
+        posts = $(posts).slice(0, max_posts);
+      } else {
+        $('.posts-more a').addClass('hidden');
+      }
+
+      // apply last style
+      $(posts.slice(-1)[0]).addClass('post-preview-last');
+
+      $(posts).removeClass('hidden');
+      $(posts).find('img[data-src]').each(function(i, img) {
+        load_image(img);
+      });
+    } else {
+      $(posts).addClass('hidden');
+    }
+  }
+
+  function apply_hash_filter() {
+
+    // clear active state
+    $('.categories .active').removeClass('active');
+
+    // mark all posts invisible to start
+    set_posts_visible($('.posts-list').children('a'), false);
+
+    // if we have a hash filter
+    if (window.location.hash) {
+
+      // mark posts that match the category visible
+      var page_category = window.location.hash.replace("#", "");
+      var posts = $('.post-metadata').map(function(idx, script) {
+        var metadata = $.parseJSON($(script).html());
+        var post = null;
+        $.each(metadata.categories, function(idx, category) {
+          category = category.replace(/ /g,"_");
+          if (category == page_category) {
+            post = $(script).parent().get();
+            return false;
+          }
+        });
+        return post;
+      });
+      set_posts_visible(posts, true);
+
+      // mark the hash active
+      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
+
+    } else {
+
+      // no hash filter, make all posts visible (subject to max display)
+      set_posts_visible($('.posts-list').children(), true);
+
+    }
+  }
+
+  // more articles
+  function apply_post_limits(apply) {
+    if (apply) {
+      $('.posts-container').addClass('posts-apply-limit');
+      $('.posts-more a').removeClass('hidden');
+    } else {
+      $('.posts-container').removeClass('posts-apply-limit');
+      $('.posts-more a').addClass('hidden');
+    }
+  }
+
+  // hash filter handling
+  apply_hash_filter();
+  $(window).on('hashchange',function() {
+    apply_post_limits(true);
+    apply_hash_filter();
+  });
+
+  // more articles link
+  $('.posts-more a').click(function(e) {
+    e.preventDefault();
+    apply_post_limits(false);
+    apply_hash_filter();
+    return false;
+  });
+
+}
+
+</script>
+
+
+
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
+<div class="posts-list">
+<h1 class="posts-list-caption">Statistics and programming</h1>
+<a href="posts/2020-09-25-score-de-propension/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["bias control"]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 25, 2020</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2020-09-25-score-de-propension/score-de-propension_files/figures/covariables.png"/>
+</div>
+<div class="description">
+<h2>score de propension</h2>
+<p>Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).</p>
+</div>
+</a>
+</div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#bias_control">bias control</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="posts-more">
+<a href="#">More articles &raquo;</a>
+</div>
+</div>
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>score de propension</h1>
-<p><p>Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales. Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension. Enfin je présente aussi les forces et faiblesses de la méthode du score de propension. Cet article est inspiré de l’article de Moulis et al. (2018).</p></p>
+<h1>Statistics and programming</h1>
+<p>This section concern statistics and programming methods and technics useful for data analysis.</p>
 </div>
 
-<div class="d-byline">
-  Bachirou Taddé <a href="https://bachirtadde.github.io" class="uri">https://bachirtadde.github.io</a> 
-  
-<br/>09-25-2020
-</div>
 
 <div class="d-article">
-<!-- # Introduction -->
-<!-- Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques techniques de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018). -->
-<h1 id="les-differents-types-de-covariables">Les différents types de covariables</h1>
-<p>Une étude statistique peut être vue comme une collection de variables et de méthodes d’analyse de ces variables conformément à l’objectif de l’étude. Le plus souvent il s’agira d’explorer ou de comprendre le lien entre deux variables spécifiques tout en tenant compte de la présence d’autres variables qui peuvent s’influencer mutuellement : il s’agit là de covariables.  Les covariables d’une étude statistique peuvent être réparties en 6 catégories comme indiqué dans la figure 1.</p>
-<ul>
-<li><p><strong>Variable dépendante (évènement)</strong> : variable d’intérêt dans une étude (exemple saignement grave).</p></li>
-<li><p><strong>Variable indépendante (exposition)</strong> : variable dont on veut comprendre l’influence sur la variable d’étude (exemple anticoagulant).</p></li>
-<li><p><strong>Variable médiatrice (intermédiaire)</strong> : variable se situant sur le chemin causal allant de la variable indépendante à la variable dépendante, exemple INR.</p></li>
-<li><p><strong>Facteur de confusion</strong> : Variable liée à la fois à la variable indépendante et à la variable dépendante. Variable qui est source de variabilité à la fois de la variable dépendante et de la variable indépendante. Exemple l’âge, sexe, insuffisance rénale.</p></li>
-<li><p><strong>Variable instrumentale</strong> : variable qui influence uniquement la variable indépendante.</p></li>
-<li><p><strong>Variable liée uniquement à l’événement</strong>, exemple chute.</p></li>
-</ul>
-<p><img src="score-de-propension_files/figures/covariables.png" alt="align = center, width=" /><br />
-<em>Figure 1. Les différents types de variables dans une étude statistique (Moulis et al. 2018).</em></p>
-<h1 id="les-differents-biais">Les différents biais</h1>
-<p>Le but d’une étude statistique est d’obtenu une représentation exacte de la réalité à partir de l’analyse de données collectées. Pour des raisons de ressources limitées, les données de l’analyse sont incomplètes. Souvent un échantillon de la population est utilisé et les conclusions d’analyse sur l’échantillon sont extrapolées à l’échelle de la population ; ce qui principalement peut induire des erreurs d’appréciation dites bais. Un biais est une <strong>erreur de raisonnement</strong> ou de <strong>procédure</strong> qui amène à une représentation fausse de la réalité. Les biais courant en statistique sont :</p>
-<ul>
-<li><p><strong>Biais de sélection</strong> (erreur de procédure) : une erreur systématique faite lors de la sélection des sujets à étudier. Elle traduit un échantillon non représentatif de la population étudiée.</p></li>
-<li><p><strong>Biais d’information</strong> (ou biais de mesure, erreur de procédure) : une erreur systématique due à une mauvaise mesure d’une ou plusieurs variables de l’étude (exposition, évènement, médiatrice, etc.).</p></li>
-<li><p><strong>Biais d’indication</strong> (ou biais d’évaluation, erreur de raisonnement): une erreur systématique due au fait que la mesure du critère de jugement (de survenu de l’évènement) n’est pas réalisée de la même manière dans les groupes comparés. Il s’agit d’un raisonnement inconscient ou d’une croyance selon laquelle les patients les plus exposés sont aussi ceux les plus à risque de développer l’événement, conduisant à une tendance à relâcher le critère de jugement de survenu de l’événement chez la population la plus exposé. Elle entraine souvent une surestimation de l’effet de l’exposition.</p></li>
-<li><p><strong>Biais d’interprétation</strong> : une erreur systématique d’interprétation des résultats d’analyse entrainant une fausse représentation de la réalité.</p></li>
-</ul>
-<p><strong>NB</strong> : Il est donc important tout au long d’une étude statistique d’éviter ou de contrôler l’ensemble des biais potentiels.</p>
-<h1 id="les-differentes-types-detude">Les différentes types d’étude</h1>
-<p>Nous pouvons identifier deux types d’études statistiques :</p>
-<ul>
-<li>Etude expérimentale (essai randomisée)</li>
-<li>Etude observationnelle (étude vie réelle)</li>
-</ul>
-<h2 id="etude-experimentale">Etude expérimentale</h2>
-<p>Une étude expérimentale est une étude contrôlée qui permet de répondre à la question : « est-ce que l’exposition a un effet sur la survenue de l’événement en conditions expérimentales ?». Elle présente les avantages suivantes:</p>
-<ul>
-<li>(+) elle est la méthodologie de référence la moins biaisée pour faire de l’inférence causale.</li>
-<li>(+) elle tient compte des variables observables et non-observables.</li>
-</ul>
-<p>Ses faiblesses sont :</p>
-<ul>
-<li>(-) lune étude expériementale est réalisée dans des conditions expérimentales loin de la vie réelle.</li>
-<li>(-) Il est impossible à mettre en ouvre dans certaines situations (churigie ou maladie rare, etc.).</li>
-</ul>
-<h2 id="etude-observationnelle">Etude observationnelle</h2>
-<p>Les études observationnelles permettent de répondre à la question : « quel est l’effet de l’exposition sur la survenue de l’événement en conditions réelles ? » Elle présente l’avantage de faire :</p>
-<ul>
-<li>(+) une inférence causale dans des conditions complexes de vie réelle.</li>
-</ul>
-<p>Leurs faiblesses sont :</p>
-<ul>
-<li>(-) la présence potentielle de plusieurs sources de biais.</li>
-<li>(-) l’allocation du traitement non aléatoire peut entrainer un biais d’indication.</li>
-<li>(-) nécessite une méthode supplémentaire de contrôle de biais.</li>
-<li>(-) les facteurs de confusion non-observable ne sont pas pris en compte;</li>
-<li>(-) la non-prise en compte des facteurs de confusion non observables peut entrainer des biais résiduels.</li>
-</ul>
-<h1 id="methode-de-controle-de-biais-dans-une-etude-observationnelle">Méthode de contrôle de biais dans une étude observationnelle</h1>
-<p>On peut identifier deux approches pour contrôler les biais dans une étude observationnelle :</p>
-<ul>
-<li><p><strong>Modèle d’analyse multivarié</strong> dont les forces et faiblesses sont :</p>
-<ul>
-<li>(+) Approche classique et facile à mettre en ouvre</li>
-<li>(-) Requiert des hypothèses spécifiques difficiles à vérifier (hypothèses de modélisation)</li>
-<li>(-) Requiert des règles strictes pour une interprétation causale (Pearl, 2000)</li>
-<li>(-) Limitation du nombre de covariables sinon problème de sur-ajustement</li>
-</ul></li>
-<li><p><strong>Méthode du score de propension (Rosenbaum &amp; Rubin, 1983)</strong> dont les forces et faiblesses sont :</p>
-<ul>
-<li>(+) maitriser par une seule covariable (le score de propension) le biais de confusion</li>
-<li>(-) exclus les variables non-observables (ou non-observée)</li>
-<li>(-) Possible biais résiduel du fait de variables non-observables</li>
-</ul></li>
-</ul>
-<h1 id="methode-du-score-de-propension-rosenbaum-rubin-1983">Méthode du Score de propension (Rosenbaum &amp; Rubin, 1983)</h1>
-<p>Dans la méthode du score de propension, un score de propension est calculé pour chaque individu. Le score de propension de chaque individu est la probabilité d’être exposé conditionnellement à des covariables de l’étude.</p>
-<p>Soit :</p>
-<ul>
-<li><span class="math inline">\(Y\)</span> : la variable « Evènement », la variable d’intérêt ou variable dépendante.</li>
-<li><span class="math inline">\(X\)</span> : la variable « Exposition », variable binaire 1 = exposé, 0 = non-exposé</li>
-<li><span class="math inline">\(C\)</span> : l’ensemble des autres covariables de l’étude</li>
-<li><span class="math inline">\(S\)</span> : un sous ensemble de covariables : <span class="math inline">\(S \subset C\)</span></li>
-<li><span class="math inline">\(sp\)</span> : le score de propension</li>
-</ul>
-<p><span class="math display">\[\begin{equation}\label{eq1}
-sp = P(X=1\rvert S =s) 
-\end{equation}\]</span></p>
-<p>Ainsi, le jeu de données est complété par les scores de propension des individus calculés à partir de la formule . La formule  étant une formule probabiliste, elle requiert une estimation. Je détaillerai dans un prochain article les méthodes d’estimation du score de propension. Toutefois le principe est de faire une régression pour estimer le score de propension de chaque individu.</p>
-<h2 id="methode-de-creation-du-score-de-propension">Méthode de création du score de propension</h2>
-<ul>
-<li>Régression logistique</li>
-<li>Autre méthode de scoring normalisée (LDA, QDA, etc.)???</li>
-</ul>
-<h2 id="choix-des-variables-a-inclure-dans-la-creation-du-score">Choix des variables à inclure dans la création du score</h2>
-<p>Il est important de définir un vrai porcessus de choix des variables devant servir à la création du score. J’ai pu identifier dans la litérature deux approches que sont:</p>
-<ul>
-<li><strong>Méthode inclusive</strong> : inclure toutes les covariables observables disponibles
-<ul>
-<li>(-) problème de sur-ajustement</li>
-</ul></li>
-<li><strong>Méthode exclusive</strong> : lister les covariables à inclure sur la base de la littérature
-<ul>
-<li>Prioriser les covariables de type facteur de confusion</li>
-<li>Risque d’omission de variable importante</li>
-</ul></li>
-</ul>
-<h2 id="validation-du-score-de-propension">Validation du score de propension</h2>
-<p>L’objectif du score de propension est de restaurer une équiprobabilité entre les groupes d’exposition afin de contrôler d potentiels biais (surtout le biais de sélection). Il est donc important de vérifier que le SP restaure l’équiprobabilité d’exposition entre groupe exposé et groupe non exposé. Le score de propension est une variable dérivée de l’étude. Et en tant que telle, on peut vérifier que les groupes d’exposition sont comparables au regard de cette variable, tout comme on faire un test de comparaison de moyenne d’une variable pour comparer des groupes de sujets. On peut donc:</p>
-<ul>
-<li>Vérifier que le score de propension restaure l’équiprobabilité d’exposition entre groupe exposé et groupe non exposé ; utiliser des mesures statistiques ou/et des représentations graphiques (distribution des scores dans chaque groupe, par exemple) à cet effet.</li>
-<li>Vérifier que les caractéristiques des [deux populations] sont les mêmes pour toutes les covariables ; utiliser des tests statistiques à cet effet.</li>
-</ul>
-<h2 id="utilisation-du-score-de-propension">Utilisation du score de propension</h2>
-<p>Le plus important c’est l’utilisation que nous faisons des outils à disposition. À ce titre, il est important de connaitre les méthodes et recommandations d’utilisation du score de propension.<br />
-Le score de propension peut être utilisé comme suit :</p>
-<ul>
-<li>Par stratification</li>
-<li>Par appariement</li>
-<li>Par pondération (IPTW)</li>
-<li>Par Ajustement dans un modèle de régression</li>
-</ul>
-<p>De toutes ces méthodes, quelle est la meilleure?</p>
-<h2 id="controle-du-biais-residuel-du-fait-de-variables-non-observables-dans-la-methode-du-score-de-propension">Contrôle du biais résiduel du fait de variables non-observables dans la méthode du score de propension</h2>
-<ul>
-<li>Utilisation du la propensity score calibration (PSC)</li>
-<li>Utilisation de témoins négatifs</li>
-</ul>
-<h1 id="conclusion">Conclusion</h1>
-<p>Le score de propension est donc une technique utile pour qu’une étude observationnelle se rapproche des conditions « expérimentales » de comparabilité d’une étude randomisée. Cependant, il n’est pas dénué de limites et ne permet pas de remplacer une étude randomisée.</p>
-<h1 id="references">Références</h1>
-<p>Rosenbaum, Paul R., and Donald B. Rubin. “Reducing bias in observational studies using subclassification on the propensity score.” Journal of the American statistical Association 79.387 (1984): 516-524. </p>
-<p>Pearl, Judea. “Models, reasoning and inference.” Cambridge, UK: CambridgeUniversityPress (2000). </p>
-<p>Moulis, G., and M. Lapeyre-Mestre. “Score de propension: intérêts, utilisation et limites. Un guide pratique pour le clinicien.” La Revue de Médecine Interne 39.10 (2018): 805-812.</p>
+
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1109,15 +1675,6 @@ Le score de propension peut être utilisé comme suit :</p>
 <div class="d-appendix">
 </div>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

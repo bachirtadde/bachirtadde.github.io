@@ -1,0 +1,13 @@
+---
+title: "Statistics and programming"
+description:
+  This section concern statistics and programming methods and technics useful for data analysis.
+site: distill::distill_website
+listing:
+  posts:
+    - 2020-09-25-score-de-propension
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
