@@ -1,0 +1,26 @@
+---
+title: "Slides & Powerpoint"
+description: |
+  A short description of the post.
+author:
+  - name: Bachirou Taddé
+    url: https://bachirtadde.github.io
+date: 09-27-2020
+categories: presentation
+collections:
+  posts:
+    disqus: presentation
+    share: [twitter, linkedin, facebook]
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+

@@ -1,5 +1,5 @@
 ---
-title: "score de propension"
+title: "Score de propension"
 description: |
   Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).
   
@@ -24,6 +24,10 @@ knitr::opts_chunk$set(echo = FALSE)
 <!-- # Introduction -->
 
 <!-- Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques techniques de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018). -->
+
+1. [article from this post](https://bachirtadde.github.io/docs/download/article_Score_de_Propension.pdf)  
+2. [slides for this post](https://bachirtadde.github.io/docs/download/slides_Score_de_Propension.pdf)
+
 
 # Les différents types de covariables
 

@@ -1,23 +1,39 @@
 [
   {
-    "path": "posts/2020-09-25-score-de-propension/",
-    "title": "score de propension",
-    "description": "Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).",
+    "path": "posts/2020-09-27-publishing-distill-packages-and-github-pages/",
+    "title": "Publishing: Distill packages and Github Pages",
+    "description": "A short description of the post.",
     "author": [
       {
         "name": "Bachirou Taddé",
         "url": "https://bachirtadde.github.io"
       }
     ],
-    "date": "2020-09-25",
+    "date": "2020-09-27",
     "categories": [
-      "bias control"
+      "broadcasting"
     ],
-    "preview": "posts/2020-09-25-score-de-propension/score-de-propension_files/figures/covariables.png",
-    "last_modified": "2020-09-25T19:43:01+02:00",
-    "input_file": {},
-    "preview_width": 753,
-    "preview_height": 330
+    "preview": {},
+    "last_modified": "2020-09-27T19:24:09+02:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2020-09-27-publishing-slides-powerpoint/",
+    "title": "Publishing: Slides & Powerpoint",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Bachirou Taddé",
+        "url": "https://bachirtadde.github.io"
+      }
+    ],
+    "date": "2020-09-27",
+    "categories": [
+      "presentation"
+    ],
+    "preview": {},
+    "last_modified": "2020-09-27T19:32:12+02:00",
+    "input_file": {}
   },
   {
     "path": "posts/welcome/",
@@ -34,5 +50,25 @@
     "preview": {},
     "last_modified": "2020-09-25T14:42:35+02:00",
     "input_file": {}
+  },
+  {
+    "path": "posts/2020-09-25-score-de-propension/",
+    "title": "Score de propension",
+    "description": "Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).",
+    "author": [
+      {
+        "name": "Bachirou Taddé",
+        "url": "https://bachirtadde.github.io"
+      }
+    ],
+    "date": "2020-09-25",
+    "categories": [
+      "bias control"
+    ],
+    "preview": "posts/2020-09-25-score-de-propension/score-de-propension_files/figures/covariables.png",
+    "last_modified": "2020-09-29T18:40:15+02:00",
+    "input_file": "score-de-propension.utf8.md",
+    "preview_width": 753,
+    "preview_height": 330
   }
 ]

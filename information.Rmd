@@ -2,6 +2,10 @@
 title: "Information construction from statistical analysis"
 description:
   This section is about information obtained from statistical analysis and needed for decision making.
+listing:
+  posts:
+    - 2020-09-27-publishing-distill-packages-and-github-pages
+    - 2020-09-27-publishing-slides-powerpoint
 ---
   
 ```{r setup, include=FALSE}
