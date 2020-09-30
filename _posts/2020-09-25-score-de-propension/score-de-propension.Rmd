@@ -1,13 +1,13 @@
 ---
 title: "Score de propension"
 description: |
-  Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).
+ <p align = "justify">Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques technique de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018).</p>
   
 author:
   - name: Bachirou Taddé
     url: https://bachirtadde.github.io
 date: 09-25-2020
-categories: bias control
+categories: bias control, french
 collections:
   posts:
     disqus: bias control
@@ -15,24 +15,31 @@ collections:
 output:
   distill::distill_article:
     self_contained: false
+bibliography: bibliography.bib
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+<style>
+body {
+text-align: justify;
+text-justify: inter-word;}
+</style>
+
 <!-- # Introduction -->
 
 <!-- Cet article est consacré au score de propension. Après un rappel des notions de covariables, de biais et des différents types d’étude statistique, Cet article détaille la méthode du score de propension, une méthode utilisée dans les études observationnelle comme technique de contrôle de biais pouvant entaché les conclusions causales.  Sans trop aborder les aspects techniques, j’introduire des méthodes de création et de validation du score de propension, son utilisation, et quelques techniques de contrôle de biais résiduels inhérent au score de propension.  Enfin je présente aussi les forces et faiblesses de la méthode du score de propension.  Cet article est inspiré de l’article de Moulis et al. (2018). -->
 
-1. [article from this post](https://github.com/bachirtadde/bachirtadde.github.io/raw/master/download/article_Score_de_Propension.pdf)  
-2. [slides for this post](https://github.com/bachirtadde/bachirtadde.github.io/raw/master/download/slides_Score_de_Propension.pdf)
+1. [Télécharger l'article issu de ce post](https://github.com/bachirtadde/bachirtadde.github.io/raw/master/download/article_Score_de_Propension.pdf)  
+2. [Télécharger les slides issus de ce post](https://github.com/bachirtadde/bachirtadde.github.io/raw/master/download/slides_Score_de_Propension.pdf)
 
 
 # Les différents types de covariables
 
 Une étude statistique peut être vue comme une collection de variables et de méthodes d’analyse de ces variables conformément à l’objectif de l’étude.  Le plus souvent il s’agira d’explorer ou de comprendre le  lien entre deux variables spécifiques tout en tenant compte de la présence d’autres variables qui  peuvent s’influencer mutuellement : il s’agit là de covariables.  \newline
-Les covariables d’une étude statistique peuvent être réparties en 6 catégories comme indiqué dans la figure 1.
+Les covariables d’une étude statistique peuvent être réparties en 6 catégories comme indiqué dans la figure 1 [@moulis2018score].
 
 
 * **Variable dépendante (évènement)** : variable d’intérêt dans une étude (exemple  saignement grave).
@@ -53,7 +60,7 @@ Les covariables d’une étude statistique peuvent être réparties en 6 catégo
 
 # Les différents biais
 
-Le but d’une étude statistique est d’obtenu une représentation exacte de la réalité à partir de l’analyse de données collectées.  Pour des raisons de ressources limitées, les données de l’analyse sont incomplètes. Souvent un échantillon de la population est utilisé et les conclusions d’analyse sur l’échantillon sont extrapolées à l’échelle de la population ; ce qui principalement peut induire des erreurs d’appréciation dites bais.  Un biais est une **erreur de raisonnement** ou de **procédure** qui amène à une représentation fausse de la réalité. Les biais courant en statistique sont :
+Le but d’une étude statistique est d’obtenu une représentation exacte de la réalité à partir de l’analyse de données collectées.  Pour des raisons de ressources limitées, les données de l’analyse sont incomplètes. Souvent un échantillon de la population est utilisé et les conclusions d’analyse sur l’échantillon sont extrapolées à l’échelle de la population ; ce qui principalement peut induire des erreurs d’appréciation dites bais.  Un biais est une **erreur de raisonnement** ou de **procédure** qui amène à une représentation fausse de la réalité. Les biais courant en statistique sont : 
 
   * **Biais de sélection** (erreur de procédure) : une erreur systématique faite lors de la sélection des sujets à étudier. Elle traduit un échantillon non représentatif de la population étudiée.
 
@@ -63,7 +70,6 @@ Le but d’une étude statistique est d’obtenu une représentation exacte de l
 
   * **Biais d’interprétation** : une erreur systématique d’interprétation des résultats d’analyse entrainant une fausse représentation de la réalité.
 
-    
 **NB** : Il est donc important tout au long d’une étude statistique d’éviter ou de contrôler l’ensemble des biais potentiels.
 
 
@@ -73,7 +79,6 @@ Nous pouvons identifier deux types d’études statistiques :
 
   * Etude expérimentale (essai randomisée)
   * Etude observationnelle (étude vie réelle)
-
 
 ## Etude expérimentale
 
@@ -91,6 +96,7 @@ Ses faiblesses sont :
 
 
 ## Etude observationnelle
+
 Les études observationnelles permettent de répondre à la question : « quel est l’effet de l’exposition sur la survenue de l’événement en conditions réelles ? »
 Elle présente l'avantage de faire :
 
@@ -107,26 +113,25 @@ Leurs faiblesses sont :
   * (-) la non-prise en compte des facteurs de confusion non observables peut entrainer des biais résiduels.
 
 
-
 # Méthode de contrôle de biais dans une étude observationnelle
+
 On peut identifier deux approches pour contrôler les biais dans une étude observationnelle :
 
   * **Modèle d’analyse multivarié** dont les forces et faiblesses sont :   
   
     - (+) Approche classique et facile à mettre en ouvre
     - (-) Requiert des hypothèses spécifiques difficiles à vérifier (hypothèses de modélisation)
-    - (-) Requiert des règles strictes pour une interprétation causale (Pearl, 2000)
+    - (-) Requiert des règles strictes pour une interprétation causale [@pearl2000models]
     - (-) Limitation du nombre de covariables sinon problème de sur-ajustement
 
-  * **Méthode du score de propension (Rosenbaum \& Rubin, 1983)**   dont les forces et faiblesses sont :   
+  * **Méthode du score de propension** [@rosenbaum1984reducing]   dont les forces et faiblesses sont :   
   
     - (+) maitriser par une seule covariable (le score de propension) le biais de confusion
     - (-) exclus les variables non-observables (ou non-observée)
     - (-) Possible biais résiduel du fait de variables non-observables
 
 
-
-# Méthode du Score de propension (Rosenbaum \& Rubin, 1983)
+# Méthode du Score de propension
 
 Dans la méthode du score de propension, un score de propension est calculé pour chaque individu. Le score de propension de chaque individu est la probabilité d’être exposé conditionnellement à des covariables de l’étude.
 
@@ -145,14 +150,14 @@ sp = P(X=1\rvert S =s)
 
 Ainsi, le jeu de données est complété par les scores de propension des individus calculés à partir de la formule \ref{eq1}.  La formule \ref{eq1} étant une formule probabiliste, elle requiert une estimation. Je détaillerai dans un prochain article les méthodes d’estimation du score de propension. Toutefois le principe est de faire une régression pour estimer le score de propension de chaque individu.
 
-
 ## Méthode de création du score de propension 
 
   * Régression logistique
   * Autre méthode de scoring normalisée (LDA, QDA, etc.)???
 
 
-## Choix des variables à inclure dans la création du score 
+## Choix des variables à inclure dans la création du score
+
 Il est important de définir un vrai porcessus de choix des variables devant servir à la création du score. J'ai pu identifier dans la litérature deux approches que sont:
 
   * **Méthode inclusive** : inclure toutes  les covariables observables disponibles
@@ -168,11 +173,12 @@ L’objectif du score de propension est de restaurer une équiprobabilité entre
 
   * Vérifier que le score de propension restaure l’équiprobabilité d’exposition entre groupe exposé et groupe non exposé ; utiliser des mesures statistiques ou/et des représentations graphiques (distribution des scores dans chaque groupe, par exemple)  à cet effet.
   * Vérifier que les caractéristiques des [deux populations] sont les mêmes pour toutes les covariables ; utiliser des tests statistiques à cet effet.
-
+  
 
 ## Utilisation du score de propension
 
-Le plus important c’est l’utilisation que nous faisons des outils à disposition. À ce titre, il est important de connaitre les méthodes et recommandations d’utilisation du score de propension.    
+Le plus important c’est l’utilisation que nous faisons des outils à disposition. À ce titre, il est important de connaitre les méthodes et recommandations d’utilisation du score de propension. 
+
 Le score de propension peut être utilisé comme suit :     
 
   * Par stratification
@@ -183,19 +189,15 @@ Le score de propension peut être utilisé comme suit :
 De toutes ces méthodes, quelle est la meilleure?
 
 
-## Contrôle du  biais résiduel du fait de variables non-observables dans la méthode du score de propension  
+## Contrôle de  biais résiduels 
 
-  * Utilisation du  la propensity score calibration (PSC)
-  * Utilisation de témoins négatifs
+Des biais résiduels peuvent existés à cause de variables non-observables  non prise en compte dans la méthode du score de propension. Ces biais peuvent être corrigés par :  
+
+  * utilisation du  la propensity score calibration (PSC)
+  * utilisation de témoins négatifs
 
 # Conclusion
 
 Le score de propension est donc une technique utile pour qu’une étude observationnelle se rapproche des conditions « expérimentales » de comparabilité d’une étude randomisée. Cependant, il n’est pas dénué de limites et ne permet pas de remplacer une étude randomisée.
 
 # Références
-
-Rosenbaum, Paul R., and Donald B. Rubin. "Reducing bias in observational studies using subclassification on the propensity score." Journal of the American statistical Association 79.387 (1984): 516-524.    \newline
-
-Pearl, Judea. "Models, reasoning and inference." Cambridge, UK: CambridgeUniversityPress (2000).  \newline 
-
-Moulis, G., and M. Lapeyre-Mestre. "Score de propension: intérêts, utilisation et limites. Un guide pratique pour le clinicien." La Revue de Médecine Interne 39.10 (2018): 805-812.
